@@ -30,7 +30,7 @@ a{
     position: absolute;
     z-index: 20;
     top: 2.5rem;
-    left: 30rem;
+    right: 3rem;
     transition:1s;
 
 }
@@ -102,6 +102,7 @@ aside .aside-nav ul li{
 }
 aside .aside-nav ul li a i{
     color: aliceblue;
+    margin-right: 1.5rem;
 }
 aside .aside-nav ul li:hover{
     background-color: var(--prymary-color);
@@ -122,3 +123,4 @@ button{
     border-radius: 1rem;
     cursor: pointer;
 }
+
