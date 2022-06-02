@@ -1,26 +1,124 @@
-/* Ellipse 1 */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+:root{
+    --prymary-color:rgb(46, 147, 128);
+    --black-hight:rgb(25, 25, 25);
+    --black-low:rgb(66, 66, 74);
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%;
+    font-family: 'Roboto', sans-serif;
 
-.logo{position: absolute;
-width: 100px;
-height: 100px;
+}
+ul li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: aliceblue;
+}
+.hide{
+    display: none;
+}
+/* MOBILE MENU */
 
-background: #FFDD22;
+#menu{
+    position: absolute;
+    z-index: 20;
+    top: 2.5rem;
+    left: 30rem;
+    transition:1s;
 
+}
+#close{
+    display: none;
+    position: absolute;
+    z-index: 20;
+    top: 2.5rem;
+    left:-30rem;
+    color: aliceblue;
+}
 
-/* SD */
+#menu_check:checked ~ label #close{
+    display: block;
+    left: 30rem;
+}
+#menu_check:checked~label #menu {
+    display: none;
+}
+#menu_check:checked~aside {
+    display: block;
+    left: 0;
+}
+
+aside{
+ /*Background*/
+box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgb(46, 147, 128);
+background:linear-gradient(195deg, rgb(66, 66, 74) 0%, rgb(25, 25, 25) 100%);
+max-width: 32rem;
+margin: 2rem 1rem;
+width: 100%;
+height: calc(95vh - 1rem);
+border-radius: 1rem;
 
 position: absolute;
-width: 93px;
-height: 80px;
-
-font-family: 'Ubuntu';
-font-style: normal;
-font-weight: 700;
-font-size: 70px;
-line-height: 80px;
+left: -34rem;
 display: flex;
+flex-direction: column;
 align-items: center;
-text-align: center;
 
-color: #FFFFFF;
+transition: 1s;
+
+
+}
+aside .aside-logo{
+    margin: 2rem auto;
+    padding: 1rem autos;
+    border-bottom: 1px solid rgb(46, 147, 128);
+    width: 90%;
+    text-align: center;
+
+}
+aside .aside-logo img{
+    width: 5rem;
+    margin: 2rem 0;
+}
+aside .aside-nav{
+    font-size: 1.8rem;
+    width: 90%;
+    margin-bottom: 0;
+}
+aside .aside-nav ul li{
+    margin: 1rem auto;
+    align-content: flex-end;
+    width: 85%;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    
+}
+aside .aside-nav ul li a i{
+    color: aliceblue;
+}
+aside .aside-nav ul li:hover{
+    background-color: var(--prymary-color);
+    cursor: pointer;
+}
+aside .aside-button {
+    width: 100%;
+    text-align: center;
+
+}
+button{
+    margin-top: 1rem;
+    font-size: 1.8rem;
+    background-color: var(--prymary-color);
+    border: none;
+    padding: 1rem;
+    width: 50%;
+    border-radius: 1rem;
+    cursor: pointer;
 }
