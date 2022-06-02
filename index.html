@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <title>Plataforma IoT Demo</title>
-    <link rel="icon" href="./img/LOGOSD.png">
+    <link rel="icon" href="./img/LOGOBAT.png">
     <script src="https://kit.fontawesome.com/609fa7e19c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -27,11 +27,11 @@
 </label>
 <aside>
     <div class="aside-logo">
-        <img src="./img/LOGOSD.png" alt="Logo IoT">
+        <img src="./img/LOGOBAT.png" alt="Logo IoT">
 
     </div>
     <div class="aside-nav">
-        <ul>
+        <ul id="nav_menu">
             <li><a href="#"><i class="fas fa-chart-pie"></i> Dashboard</a></li>
             <li><a href="#"><i class="fas fa-laptop-code"></i>New Device</a></li>
             <li><a href="#"><i class="fas fa-laptop-house"></i> My devices</a></li>
@@ -44,6 +44,27 @@
 
     </div>
 </aside>
+<!-- Script para la navegacion del sidebar -->
+<script>
+    let lista=document.querySelectorAll('#nav_menu li');
+    let checkbox = document.querySelector('#menu_check');
+    function elementSelected(){
+        lista.forEach(element => {
+           
+            element.classList.remove('hovered');
+        });
+        this.classList.add('hovered');
+        checkbox.checked=false;
+
+    }
+
+    lista.forEach(element => {
+         
+        element.addEventListener('click',elementSelected);
+    });
+
+
+</script>
 <main>
 
 </main>

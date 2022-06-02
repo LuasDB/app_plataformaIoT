@@ -32,6 +32,8 @@ a{
     top: 2.5rem;
     right: 3rem;
     transition:1s;
+    color: var(--prymary-color);
+    font-size: 3rem;
 
 }
 #close{
@@ -54,7 +56,10 @@ a{
     display: block;
     left: 0;
 }
-
+.hovered{
+    background: var(--prymary-color);
+}
+/* SIDEBAR */
 aside{
  /*Background*/
 box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgb(46, 147, 128);
@@ -122,5 +127,6 @@ button{
     width: 50%;
     border-radius: 1rem;
     cursor: pointer;
+    color:aliceblue;
 }
 
