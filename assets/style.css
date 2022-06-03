@@ -1,8 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&family=Ubuntu+Mono:wght@400;700&display=swap');
+/* font-family: 'Roboto',
+sans-serif;
+font-family: 'Ubuntu Mono',
+monospace; */
 :root{
-    --prymary-color:rgb(46, 147, 128);
+    --prymary-color:#98e5f8;
     --black-hight:rgb(25, 25, 25);
-    --black-low:rgb(66, 66, 74);
+    --black-low:rgb(5, 71, 151);
+    --backgorund-app:rgb(4, 41, 87);
+    --line:#98e5f8;
+    --buttons:rgb(25, 25, 25,0.5);
+    --buttons-card:rgb(19, 119, 242);
 }
 *{
     box-sizing: border-box;
@@ -12,6 +20,8 @@
 html{
     font-size: 62.5%;
     font-family: 'Roboto', sans-serif;
+    background-color: var(--backgorund-app);
+    overflow-x: hidden;
 
 }
 ul li{
@@ -21,13 +31,24 @@ a{
     text-decoration: none;
     color: aliceblue;
 }
+button {
+    margin-top: 1rem;
+    font-size: 1.8rem;
+    background-color: var(--buttons-card);
+    border: none;
+    padding: 1rem;
+    width: 50%;
+    border-radius: 1rem;
+    cursor: pointer;
+    color: aliceblue;
+}
 .hide{
     display: none;
 }
 /* MOBILE MENU */
 
 #menu{
-    position: absolute;
+    position: fixed;
     z-index: 20;
     top: 2.5rem;
     right: 3rem;
@@ -38,11 +59,11 @@ a{
 }
 #close{
     display: none;
-    position: absolute;
+    position: fixed;
     z-index: 20;
     top: 2.5rem;
     left:-30rem;
-    color: aliceblue;
+    color: var(--line);
 }
 
 #menu_check:checked ~ label #close{
@@ -53,37 +74,39 @@ a{
     display: none;
 }
 #menu_check:checked~aside {
-    display: block;
     left: 0;
 }
 .hovered{
     background: var(--prymary-color);
 }
+
 /* SIDEBAR */
 aside{
  /*Background*/
 box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgb(46, 147, 128);
-background:linear-gradient(195deg, rgb(66, 66, 74) 0%, rgb(25, 25, 25) 100%);
+background:linear-gradient(195deg, rgb(66, 66, 74) 0%, rgb(5, 71, 151) 100%);
 max-width: 32rem;
 margin: 2rem 1rem;
 width: 100%;
 height: calc(95vh - 1rem);
 border-radius: 1rem;
 
-position: absolute;
+position: fixed;
+top: 0.1rem;
 left: -34rem;
 display: flex;
 flex-direction: column;
 align-items: center;
-
-transition: 1s;
+z-index: 10;
+scroll-behavior: auto;
+transition: 0.5s;
 
 
 }
 aside .aside-logo{
     margin: 2rem auto;
     padding: 1rem autos;
-    border-bottom: 1px solid rgb(46, 147, 128);
+    border-bottom: 1px solid var(--line);
     width: 90%;
     text-align: center;
 
@@ -106,7 +129,7 @@ aside .aside-nav ul li{
     
 }
 aside .aside-nav ul li a i{
-    color: aliceblue;
+    color: var(--line);
     margin-right: 1.5rem;
 }
 aside .aside-nav ul li:hover{
@@ -118,15 +141,99 @@ aside .aside-button {
     text-align: center;
 
 }
-button{
-    margin-top: 1rem;
-    font-size: 1.8rem;
-    background-color: var(--prymary-color);
-    border: none;
-    padding: 1rem;
-    width: 50%;
-    border-radius: 1rem;
-    cursor: pointer;
-    color:aliceblue;
+
+/* MAIN */
+main{
+    /* position: absolute; */
+    right: 0;
+    left: 0;
+   
+    
+    width: 100%;
+    margin:8rem 0;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+section.dashboard-devices{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+section.dashboard-devices .tittle-section{
+    border-bottom: 1px solid var(--prymary-color);
+    width: 90%;
+    color: aliceblue;
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1.2rem;
 }
 
+.card{
+   background-color: white;
+    margin:3rem 0;
+    width:90%;
+    height: 15rem;
+    border-radius: 1rem;
+    box-shadow: 2px 2px 5px 1px rgb(46, 147, 128,0.5);
+}
+.card .icon{
+    position: relative;
+    background-color: var(--black-low);
+    width: 7rem;
+    height: 7rem;
+    color: aliceblue;
+    border-radius: 1rem;
+    top: -2rem;
+    left: 2rem;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3.5rem;
+
+    box-shadow: 1px 1px 1.2px 1px rgb(0,0,0,0.3);
+   
+}
+.card .value-sensor{
+    position:relative;
+    top:-5rem;
+    left: 40vw;
+    width: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.card .value-sensor span{
+    font-size: 2rem;
+    color: rgb(0,0,0,0.5);
+    margin-bottom: 1rem;
+
+}
+.card .value-sensor h2 {
+    width: 10rem;
+    margin-top: 1.5rem;
+    font-size: 4rem;
+    font-family: 'Ubuntu Mono', monospace;
+    font-weight: bold;
+}
+.card .button-sensor{
+    position:relative;
+    margin-left: 1.5rem;
+    top:-8rem;
+    width: 50%;
+}
+/* GRAPH */
+canvas{
+    background-color: rgb(73, 75, 77);
+    border-radius: 1rem;
+    margin: 1rem;
+    
+}
