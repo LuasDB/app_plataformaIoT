@@ -68,167 +68,51 @@
 
 </script>
 <main>
-    <section class="dashboard-devices hide">
-        <h2 class="tittle-section">My sensors</h2>
-        <div class="card">
-            <div class="icon">
-                <i class="fas fa-temperature-high"></i>
-            </div>
-            <div class="value-sensor">
-                <span>Temperatura</span>
-                <h2>34 °C</h2>
-            </div>
-            <div class="button-sensor">
-
-            </div>
-        </div>
-        <div class="card">
-            <div class="icon">
-                <i class="fas fa-cloud"></i>
-            </div>
-            <div class="value-sensor">
-                <span>Humedad</span>
-                <h2>12 %</h2>
-            </div>
-            
-            
-        </div>
-
-        <h2 class="tittle-section">Lights</h2>
-        <div class="card">
-            <div class="icon">
-                <i class="fas fa-couch"></i>
-            </div>
-            <div class="value-sensor">
-                <span>Sala</span>
-                <h2>ON</h2>
-            </div>
-            <div class="button-sensor">
-                <button type="button">Off</button>
-            </div>
-        </div>
-        <div class="card">
-            <div class="icon">
-                <i class="fas fa-bath"></i>
-            </div>
-            <div class="value-sensor">
-                <span>Baño</span>
-                <h2>ON</h2>
-            </div>
-            <div class="button-sensor">
-                <button type="button">Off</button>
-            </div>
-        </div>
-        <h2 class="tittle-section">Graphs</h2>
-        <canvas id="myChart" width="400" height="400"></canvas>
-        <script>
-            const ctx = document.getElementById('myChart').getContext('2d');
-            const myChart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                    datasets: [{
-                        label: '# of Votes',
-                        data: [12, 19, 3, 5, 2, 3],
-                        backgroundColor: [
-                            'rgba(255, 99, 132, 0.2)',
-                            'rgba(54, 162, 235, 0.2)',
-                            'rgba(255, 206, 86, 0.2)',
-                            'rgba(75, 192, 192, 0.2)',
-                            'rgba(153, 102, 255, 0.2)',
-                            'rgba(255, 159, 64, 0.2)'
-                        ],
-                        borderColor: [
-                            'rgba(255, 99, 132, 1)',
-                            'rgba(54, 162, 235, 1)',
-                            'rgba(255, 206, 86, 1)',
-                            'rgba(75, 192, 192, 1)',
-                            'rgba(153, 102, 255, 1)',
-                            'rgba(255, 159, 64, 1)'
-                        ],
-                        borderWidth: 1
-                    }]
-                },
-                options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true
-                        }
-                    }
-                }
-            });
-        </script>
-
-    </section>
-    <section class="list-of-devices hide ">
-        <H1>Mis dispositivos</H1>
-        <button class="button">New device </button>
-        <table>
-            <tbody>
-                <tr class="header">
-                    <th>Name</th>
-                    <th>Type</th>
-                    <th>Status</th>
-                    <th>Edit</th>
-                </tr>
-                <tr>
-                    <td>Sala</td>
-                    <td>Sensor</td>
-                    <td>Activo</td>
-                    <td><i class="far fa-edit"></i></td>
-                </tr>
-                <tr>
-                    <td>Sala</td>
-                    <td>Sensor</td>
-                    <td>Activo</td>
-                    <td><i class="far fa-edit"></i></td>
-                </tr>
-                <tr>
-                    <td>Sala</td>
-                    <td>Sensor</td>
-                    <td>Activo</td>
-                    <td><i class="far fa-edit"></i></td>
-                </tr>
-                <tr>
-                    <td>Sala</td>
-                    <td>Sensor</td>
-                    <td>Activo</td>
-                    <td><i class="far fa-edit"></i></td>
-                </tr>
-            </tbody>
-        </table>
-
-
-    </section>
-    <section class="form-new-device">
-        <h2>Add a new device</h2>
-        <p>Complete the information about your device</p>
-
-        <div class="form-device">
-            <input type="id_device" placeholder="ID Device">
-            <select name="type-device" id="type-device">
-                <option value="switch">Switch</option>
-                <option value="sensor">Sensor</option>
-                <option value="rgb">RGB Lights</option>
-            </select>
-            <input type="text" placeholder="Nombre">
-            <select name="type-device" id="type-device">
-                <option value="1"><i class="fas fa-chart-pie"></i> Dashboard</option>
-                <option value="2"><i class="fas fa-chart-pie"></i> Dashboard</option>
-                <option value="3"><i class="fas fa-chart-pie"></i> Dashboard</option>
-            </select>
-            
-            
-        </div>
-        <button class="button">Save</button>
-    </section>
+    
 </main>
 <footer>
 
 </footer>
 
+<script>
+    // const ctx = document.getElementById('myChart').getContext('2d');
+    // const myChart = new Chart(ctx, {
+    //     type: 'line',
+    //     data: {
+    //         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    //         datasets: [{
+    //             label: '# of Votes',
+    //             data: [12, 19, 3, 5, 2, 3],
+    //             backgroundColor: [
+    //                 'rgba(255, 99, 132, 0.2)',
+    //                 'rgba(54, 162, 235, 0.2)',
+    //                 'rgba(255, 206, 86, 0.2)',
+    //                 'rgba(75, 192, 192, 0.2)',
+    //                 'rgba(153, 102, 255, 0.2)',
+    //                 'rgba(255, 159, 64, 0.2)'
+    //             ],
+    //             borderColor: [
+    //                 'rgba(255, 99, 132, 1)',
+    //                 'rgba(54, 162, 235, 1)',
+    //                 'rgba(255, 206, 86, 1)',
+    //                 'rgba(75, 192, 192, 1)',
+    //                 'rgba(153, 102, 255, 1)',
+    //                 'rgba(255, 159, 64, 1)'
+    //             ],
+    //             borderWidth: 1
+    //         }]
+    //     },
+    //     options: {
+    //         scales: {
+    //             y: {
+    //                 beginAtZero: true
+    //             }
+    //         }
+    //     }
+    // });
+</script>
 
-
-<script src="index.js"></script>
+<script src="index2.js" type="module"></script>
+<!-- <script src="index.js" type="module"></script> -->
 </body>
 </html>

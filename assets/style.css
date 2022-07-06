@@ -276,41 +276,22 @@ canvas{
 
     
 }
-table{
-    width: 100%;
-    padding: 1rem;
-    margin-top: 5rem;
+.card-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    margin: 1rem 0;
+    background-color: gray;
     border-radius: 1rem;
-
-    background: linear-gradient(195deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    box-shadow: 1px 1px 1px 2px rgb(0,0,0,0.3); 
-    border-collapse: collapse;
-    
-    font-size: 1.4rem;
-}
-
-table tbody tr:nth-child(odd){
-    background-color: var(--ligth-primary-color2);
-}
-table tbody tr:hover{
-    background-color: var(--ligth-primary-color);
-}
-table tbody tr.header th{
-    padding: rem auto 2rem auto;
-}
-table tbody tr th{
     padding: 1rem;
-    text-align: start;
-    font-size: 1.5rem;
+}
 
-}
-table tbody tr td{
-    padding: 1.5rem 1rem;
-    text-align: start;
-}
-table tbody tr td i{
-    color: var(--white-color);
-    cursor: pointer;
+.card-info .icon-card {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    font-size: 4rem;
 }
 
 /*FORM NEW DEVICES*/
@@ -325,9 +306,6 @@ table tbody tr td i{
 
     width: 100%;
     height: 100vh;
-
-    
-
 }
 .form-new-device h2{
     font-size: 2rem;
@@ -358,6 +336,7 @@ table tbody tr td i{
 .form-device input::placeholder {
     color: var(--primary-color);
 }
+
 .form-device select{
     width: 80%;
     margin: 2rem;
@@ -372,6 +351,11 @@ table tbody tr td i{
     font-size: 1.8rem;
     color: var(--primary-color);
 }
+.form-device select:hover{
+    background-color:var(--fourth-color)
+}
+
+
 .form-device select option{
     color: var(--primary-color);
     background: var(--background-gradient);
