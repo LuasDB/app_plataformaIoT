@@ -337,30 +337,38 @@ canvas{
     color: var(--primary-color);
 }
 
-.form-device select{
-    width: 80%;
-    margin: 2rem;
+.form-device div{
+    display: grid;
+    place-items: center;
+}
 
-    background: var(--background-gradient);
-    border-radius: 0.5rem;
+.form-device div .cards-icons{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+.form-device div .card-icon{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 30%;
+    height: 6rem;
+
+    margin: 1rem;
+    padding: 1rem;
+
+    background-color: #014034;
+    font-size: 2rem;
+    border-radius: 1rem;
+    box-shadow: 1px 1px 1px 1px var(--line);
+
+}
+.form-device div .card-icon input{
     border: none;
-    box-shadow: 1px 1px 2px 1px var(--line);
-    color: var(--line);
     outline: none;
-
-    font-size: 1.8rem;
-    color: var(--primary-color);
-}
-.form-device select:hover{
-    background-color:var(--fourth-color)
-}
-
-
-.form-device select option{
-    color: var(--primary-color);
-    background: var(--background-gradient);
-
-}
-.form-device select option[selected] {
-    background: var(--secondary-color);
+    box-shadow: none;
 }

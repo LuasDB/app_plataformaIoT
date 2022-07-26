@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma IoT Demo</title>
+    <link rel="icon" href="./img/LOGOBAT.png">
+    <script src="https://kit.fontawesome.com/609fa7e19c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./assets/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+
+    <input type="checkbox" id="menu_check" class="hide">
+    <label class="header-label" for="menu_check">
+        <span class="material-icons close-menu .icon-close" id="close">
+            close
+        </span>
+        <span class="material-icons close-menu .icon-close" id="menu">
+            menu
+        </span>
+    </label>
+    <aside>
+        <div class="aside-logo">
+            <img src="./img/LOGOBAT.png" alt="Logo IoT">
+
+        </div>
+        <div class="aside-nav">
+            <ul id="nav_menu">
+                <li><a href="#" id="dashboard"><i class="fas fa-chart-pie"></i> Dashboard</a></li>
+                <li><a href="#" id="devices"><i class="fas fa-laptop-house"></i> My devices</a></li>
+                <li><a href="#" id="notifications"><i class="fas fa-bell"></i>Notifications</a></li>
+                <li><a href="#" id="settings"><i class="fas fa-cog"></i>Settings</a></li>
+            </ul>
+        </div>
+        <div class="aside-button">
+            <button type="button">Salir</button>
+
+        </div>
+    </aside>
+    <!-- Script para la navegacion del sidebar -->
+    <script>
+        let lista = document.querySelectorAll('#nav_menu li');
+        let checkbox = document.querySelector('#menu_check');
+        function elementSelected() {
+            lista.forEach(element => {
+
+                element.classList.remove('hovered');
+            });
+            this.classList.add('hovered');
+
+
+            checkbox.checked = false;
+
+        }
+
+        lista.forEach(element => {
+
+            element.addEventListener('click', elementSelected);
+        });
+
+
+    </script>
+    <main>
+        <section class="dashboard-devices hide ">
+            <h2 class="tittle-section">My sensors</h2>
+            <div class="card">
+                <div class="icon">
+                    <i class="fas fa-temperature-high"></i>
+                </div>
+                <div class="value-sensor">
+                    <span>Temperatura</span>
+                    <h2>34 °C</h2>
+                </div>
+                <div class="button-sensor">
+
+                </div>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i class="fas fa-cloud"></i>
+                </div>
+                <div class="value-sensor">
+                    <span>Humedad</span>
+                    <h2>12 %</h2>
+                </div>
+
+
+            </div>
+
+            <h2 class="tittle-section">Lights</h2>
+            <div class="card">
+                <div class="icon">
+                    <i class="fas fa-couch"></i>
+                </div>
+                <div class="value-sensor">
+                    <span>Sala</span>
+                    <h2>ON</h2>
+                </div>
+                <div class="button-sensor">
+                    <button type="button">Off</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i class="fas fa-bath"></i>
+                </div>
+                <div class="value-sensor">
+                    <span>Baño</span>
+                    <h2>ON</h2>
+                </div>
+                <div class="button-sensor">
+                    <button type="button">Off</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="icon">
+                <i class="fas fa-utensils"></i>
+                </div>
+                <div class="value-sensor">
+                    <span>Comedor</span>
+                    <h2>ON</h2>
+                </div>
+                <div class="button-sensor">
+                    <button type="button">Off</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <div class="value-sensor">
+                    <span>Cuarto</span>
+                    <h2>ON</h2>
+                </div>
+                <div class="button-sensor">
+                    <button type="button">Off</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="icon">
+                    <i class="fas fa-laptop"></i>
+                </div>
+                <div class="value-sensor">
+                    <span>Estudio</span>
+                    <h2>ON</h2>
+                </div>
+                <div class="button-sensor">
+                    <button type="button">Off</button>
+                </div>
+            </div>
+            <h2 class="tittle-section">Graphs</h2>
+            <canvas id="myChart" width="400" height="400"></canvas>
+            <script>
+                const ctx = document.getElementById('myChart').getContext('2d');
+                const myChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                        datasets: [{
+                            label: '# of Votes',
+                            data: [12, 19, 3, 5, 2, 3],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                                'rgba(255, 159, 64, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+
+        </section>
+        <section class="list-of-devices">
+            <H1>Mis dispositivos</H1>
+            <button class="button" id="btn_newDevice">New device </button>
+            <div class="card-info" id="tarjeta-no">
+                <ul>
+                    <li>Nombre </li>
+                    <li>Tipo</li>
+                    <li>Status</li>
+                </ul>
+                <div class="icon-card">
+                    <i class="fas fa-chart-pie"></i>
+                </div>
+
+            </div>
+            <div class="card-info" id="tarjeta-no">
+                <ul>
+                    <li>Nombre </li>
+                    <li>Tipo</li>
+                    <li>Status</li>
+                </ul>
+                <div class="icon-card">
+                    <i class="fas fa-chart-pie"></i>
+                </div>
+            
+            </div>
+            <style>
+                .card-info{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+
+                    margin: 1rem 0;
+                    background-color: gray;
+                    border-radius: 1rem;
+                    padding: 1rem;
+                }
+                .card-info .icon-card{
+                    display: flex;
+                    justify-content: center;
+                    align-self: center;
+                    font-size: 4rem;
+                }
+            </style>
+        </section>
+        <section class="form-new-device ">
+            <h2>Add a new device</h2>
+            <p>Complete the information about your device</p>
+
+            <div class="form-device">
+                <input id="id_device" placeholder="ID Device">
+                <div>
+                    <h2>Tipo de dispositivo On-Off</h2>
+                    
+                    <h3>Agrega un nombre para identificarlo: </h3>
+                    <input type="text" placeholder="Nombre">
+                    <h3>Se lecciona un icono : </h3>
+                    
+                    <div class="cards-icons">
+                        <div class="card-icon">
+                            <i class="fas fa-bath"></i>
+                            <input type="radio" name="icon">
+                        </div>
+                        <div class="card-icon">
+                            <i class="fas fa-couch"></i>
+                            <input type="radio" name="icon">
+                        </div>
+                        <div class="card-icon">
+                            <i class="fas fa-utensils"></i>
+                            <input type="radio" name="icon">
+                        </div>
+                        <div class="card-icon">
+                            <i class="fas fa-lightbulb"></i>
+                            <input type="radio" name="icon">
+                        </div>
+                        <div class="card-icon">
+                            <i class="fas fa-laptop"></i>
+                            <input type="radio" name="icon" value="fas fa-laptop">
+                        </div>
+                        <div class="card-icon">
+                            <i class="fas fa-chart-pie"></i>
+                            <input type="radio" name="icon">
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <button class="button" id="new_device">Save</button>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
